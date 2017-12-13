@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Pitch</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="maps.googleapis.com/maps/api/js"; type="text/javascript"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+
+    /* This showResult function is used as the callback function*/
+
+    function showResult(result) {
+      document.getElementById('latitude').value = result.geometry.location.lat();
+      document.getElementById('longitude').value = result.geometry.location.lng();
+    }
+
+    function getLatitudeLongitude(callback, address) {
+      // If adress is not supplied, use default value 'Ferrol, Galicia, Spain'
+      address = address || 'Ferrol, Galicia, Spain';
+      // Initialize the Geocoder
+      geocoder = new google.maps.Geocoder();
+      if (geocoder) {
+        geocoder.geocode({
+          'address': address
+        }, function (results, status) {
+          if (status == google.maps.GeocoderStatus.OK) {
+            callback(results[0]);
+          }
+        });
+      }
+    }
+
+    var button = document.getElementById('btn');
+
+    button.addEventListener("click", function () {
+      var address = document.getElementById('address').value;
+      getLatitudeLongitude(showResult, address)
+    });
+  </script>
+</head>
+<body>
+<script src="maps.googleapis.com/maps/api/js"; type="text/javascript"></script>
+
+<script type="text/javascript">
+
+  /* This showResult function is used as the callback function*/
+
+  function showResult(result) {
+    document.getElementById('latitude').value = result.geometry.location.lat();
+    document.getElementById('longitude').value = result.geometry.location.lng();
+  }
+
+  function getLatitudeLongitude(callback, address) {
+    // If adress is not supplied, use default value 'Ferrol, Galicia, Spain'
+    address = address || 'Ferrol, Galicia, Spain';
+    // Initialize the Geocoder
+    geocoder = new google.maps.Geocode();
+    if (geocoder) {
+      geocoder.geocode({
+        'address': address
+      }, function (results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+          callback(results[0]);
+        }
+      });
+    }
+  }
+
+  var button = document.getElementById('btn');
+
+  button.addEventListener("click", function () {
+    var address = document.getElementById('address').value;
+    getLatitudeLongitude(showResult, address)
+  });
+</script>
+
+  <app-root></app-root>
+  <script type="text/javascript">
+
+    /* This showResult function is used as the callback function*/
+
+    function showResult(result) {
+      document.getElementById('latitude').value = result.geometry.location.lat();
+      document.getElementById('longitude').value = result.geometry.location.lng();
+    }
+
+    function getLatitudeLongitude(callback, address) {
+      // If adress is not supplied, use default value 'Ferrol, Galicia, Spain'
+      address = address || 'Ferrol, Galicia, Spain';
+      // Initialize the Geocoder
+      geocoder = new google.maps.Geocoder();
+      if (geocoder) {
+        geocoder.geocode({
+          'address': address
+        }, function (results, status) {
+          if (status == google.maps.GeocoderStatus.OK) {
+            callback(results[0]);
+          }
+        });
+      }
+    }
+
+    var button = document.getElementById('btn');
+
+    button.addEventListener("click", function () {
+      var address = document.getElementById('address').value;
+      getLatitudeLongitude(showResult, address)
+    });
+  </script>
+<script src="maps.googleapis.com/maps/api/js"; type="text/javascript"></script>
+
+<script type="text/javascript" src="inline.bundle.js"></script><script type="text/javascript" src="polyfills.bundle.js"></script><script type="text/javascript" src="styles.bundle.js"></script><script type="text/javascript" src="vendor.bundle.js"></script><script type="text/javascript" src="main.bundle.js"></script></body>
+</html>
